@@ -5,76 +5,76 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>کارت شناسایی داود قاسمی</title>
 <style>
-    body{
-        margin:0;
-        font-family:tahoma;
-        background:#f0f2f5;
-        display:flex;
-        justify-content:center;
-        align-items:center;
-        min-height:100vh;
-    }
-    .card{
-        width:400px;
-        background:white;
-        border-radius:20px;
-        overflow:hidden;
-        box-shadow:0 8px 25px rgba(0,0,0,0.15);
-    }
-    .header{
-        background:#0b2c5f;
-        color:white;
-        text-align:center;
-        padding:20px;
-        font-size:22px;
-        font-weight:bold;
-    }
-    .profile{
-        text-align:center;
-        padding:20px;
-    }
-    .profile img{
-        width:150px;
-        height:150px;
-        border-radius:50%;
-        object-fit:cover;
-        border:5px solid #0b2c5f;
-    }
-    .name{
-        font-size:28px;
-        font-weight:bold;
-        margin-top:15px;
-        color:#0b2c5f;
-    }
-    .job{
-        font-size:18px;
-        color:#555;
-        margin-top:5px;
-    }
-    .info{
-        padding:0 25px 25px;
-    }
-    .info div{
-        display:flex;
-        justify-content:space-between;
-        padding:12px 0;
-        border-bottom:1px solid #eee;
-        font-size:16px;
-    }
-    .label{
-        font-weight:bold;
-        color:#333;
-    }
-    .value{
-        color:#555;
-    }
-    .footer{
-        background:#0b2c5f;
-        color:white;
-        text-align:center;
-        padding:12px;
-        font-size:14px;
-    }
+body{
+    margin:0;
+    font-family:tahoma;
+    background:#eef1f5;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+}
+.card{
+    width:420px;
+    background:white;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 10px 25px rgba(0,0,0,0.15);
+}
+.header{
+    background:#0b2c5f;
+    color:white;
+    text-align:center;
+    padding:20px;
+    font-size:26px;
+    font-weight:bold;
+}
+.profile{
+    text-align:center;
+    padding:20px;
+}
+.profile img{
+    width:140px;
+    height:140px;
+    border-radius:50%;
+    object-fit:cover;
+    border:5px solid #0b2c5f;
+}
+.name{
+    font-size:28px;
+    font-weight:bold;
+    margin-top:15px;
+    color:#0b2c5f;
+}
+.job{
+    font-size:18px;
+    color:#666;
+    margin-top:5px;
+}
+.info{
+    padding:0 25px 25px;
+}
+.row{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:12px 0;
+    border-bottom:1px solid #eee;
+}
+.label{
+    font-weight:bold;
+    color:#333;
+}
+.value{
+    color:#555;
+}
+.footer{
+    background:#0b2c5f;
+    color:white;
+    text-align:center;
+    padding:12px;
+    font-size:14px;
+}
 </style>
 </head>
 <body>
@@ -83,19 +83,33 @@
     <div class="header">کارت شناسایی پرسنل</div>
 
     <div class="profile">
-        <img src="dsm (1).jpg" alt="عکس پرسنلی"
+        <img src="dsm (1).jpg" alt="عکس پرسنلی">
         <div class="name">داود قاسمی</div>
         <div class="job">امور مالی شهرداری</div>
     </div>
 
     <div class="info">
-        <div><span class="label">شماره تماس:</span><span class="value">0918098765</span></div>
-        <div><span class="label">کد ملی:</span><span class="value">8753678</span></div>
-        <div><span class="label">محدوده کاری:</span><span class="value">میدان دادسرا</span></div>
-        <div><span class="label">سمت شغلی:</span><span class="value">امور مالی شهرداری</span></div>
+        <div class="row">
+            <span class="label">شماره تماس:</span>
+            <span class="value">0918098765</span>
+        </div>
+        <div class="row">
+            <span class="label">کد ملی:</span>
+            <span class="value">8753678</span>
+        </div>
+        <div class="row">
+            <span class="label">محدوده کاری:</span>
+            <span class="value">میدان دادسرا</span>
+        </div>
+        <div class="row">
+            <span class="label">سمت شغلی:</span>
+            <span class="value">امور مالی شهرداری</span>
+        </div>
     </div>
 
-    <div class="footer">اطلاعات فوق مربوط به کارت شناسایی این فرد می‌باشد.</div>
+    <div class="footer">
+        اطلاعات فوق مربوط به کارت شناسایی این فرد می‌باشد.
+    </div>
 </div>
 
 </body>
