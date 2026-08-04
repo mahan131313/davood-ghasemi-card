@@ -3,7 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>کارت شناسایی داود قاسمی</title>
+
+<title>کارت شناسایی پرسنل</title>
+
 <style>
 body{
     margin:0;
@@ -14,6 +16,7 @@ body{
     align-items:center;
     min-height:100vh;
 }
+
 .card{
     width:420px;
     background:white;
@@ -21,18 +24,19 @@ body{
     overflow:hidden;
     box-shadow:0 10px 25px rgba(0,0,0,0.15);
 }
+
 .header{
     background:#0b2c5f;
     color:white;
     text-align:center;
     padding:20px;
-    font-size:26px;
-    font-weight:bold;
 }
+
 .profile{
     text-align:center;
     padding:20px;
 }
+
 .profile img{
     width:140px;
     height:140px;
@@ -40,86 +44,135 @@ body{
     object-fit:cover;
     border:5px solid #0b2c5f;
 }
+
 .name{
     font-size:28px;
     font-weight:bold;
     margin-top:15px;
     color:#0b2c5f;
 }
+
 .job{
     font-size:18px;
     color:#666;
-    margin-top:5px;
 }
+
 .info{
     padding:0 25px 25px;
 }
+
 .row{
     display:flex;
     justify-content:space-between;
-    align-items:center;
+    gap:10px;
     padding:12px 0;
     border-bottom:1px solid #eee;
 }
+
 .label{
     font-weight:bold;
-    color:#333;
 }
+
 .value{
     color:#555;
+    text-align:left;
 }
+
 .footer{
     background:#0b2c5f;
     color:white;
     text-align:center;
     padding:12px;
-    font-size:14px;
 }
 </style>
+
 </head>
+
 <body>
 
 <div class="card">
+
 <div class="header">
-    <div style="font-size:20px;font-weight:bold;letter-spacing:1px;">
+    <div style="font-size:20px;font-weight:bold;">
         شرکت فنی مهندسی بهین دشت ملایر
     </div>
-    <div style="width:80px;height:2px;background:#fff;margin:8px auto;"></div>
+    <hr>
     <div style="font-size:26px;font-weight:bold;">
         کارت شناسایی پرسنل
     </div>
 </div>
-    <div class="profile">
-        <img src="logo.jpg" alt="عکس پرسنلی">
-        <div class="name">داود قاسمی</div>
-        <div class="job"></div>
-    </div>
 
-    <div class="info">
-    <div class="row">
-        <span class="label">کد ملی:</span>
-        <span class="value">3932734361</span>
-    </div>
 
-    <div class="row">
-        <span class="label">عنوان شغلی:</span>
-        <span class="value">حسابدار</span>
-    </div>
-
-    <div class="row">
-        <span class="label">محدوده کاری:</span>
-        <span class="value">بلوار نبوت حوزه خدمات شهرداری</span>
-    </div>
-
-    <div class="row">
-        <span class="label">تلفن رسیدگی به شکایات شهرداری ملایر:</span>
-        <span class="value">137</span>
-    </div>
+<div class="profile">
+    <img id="photo" src="logo.jpg">
+    <div class="name" id="name"></div>
+    <div class="job" id="job"></div>
 </div>
-    <div class="footer">
-        اطلاعات فوق مربوط به کارت شناسایی این فرد می‌باشد.
-    </div>
+
+
+<div class="info">
+
+<div class="row">
+<span class="label">کد ملی:</span>
+<span class="value" id="code"></span>
 </div>
+
+<div class="row">
+<span class="label">عنوان شغلی:</span>
+<span class="value" id="job2"></span>
+</div>
+
+<div class="row">
+<span class="label">محدوده کاری:</span>
+<span class="value" id="area"></span>
+</div>
+
+<div class="row">
+<span class="label">شماره تماس:</span>
+<span class="value" id="phone"></span>
+</div>
+
+</div>
+
+
+<div class="footer">
+اطلاعات فوق مربوط به کارت شناسایی این فرد می‌باشد.
+</div>
+
+</div>
+
+
+<script>
+
+let params = new URLSearchParams(window.location.search);
+let id = params.get("id") || "001";
+
+
+fetch("data.json")
+.then(res => res.json())
+.then(data => {
+
+let person = data.find(x => x.id === id);
+
+if(person){
+
+document.getElementById("name").innerText = person.name;
+document.getElementById("job").innerText = person.job;
+document.getElementById("job2").innerText = person.job;
+document.getElementById("code").innerText = person.code;
+document.getElementById("area").innerText = person.area;
+document.getElementById("phone").innerText = person.phone;
+
+if(person.photo){
+document.getElementById("photo").src="photos/"+person.photo;
+}
+
+}
+
+});
+
+</script>
+
 
 </body>
 </html>
